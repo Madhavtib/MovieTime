@@ -1,0 +1,149 @@
+version: "3"
+
+services:
+  mysql-auth:
+    image: mysql
+    container_name: mysql-auth
+    volumes:
+      - ./data-store/auth-sql/data:/var/lib/mysql:rw
+      - ./data-store/auth-sql/database/authdb_schema.sql:/docker-entrypoint-initdb.d/schema.sql:ro
+    environment:
+      MYSQL_DATABASE: authdb
+      MYSQL_USER: auth
+      MYSQL_PASSWORD: roo123
+      MYSQL_ROOT_PASSWORD: root123
+    
+
+  mysql-movie:
+    image: mysql
+    container_name: mysql-movie
+    volumes:
+      - ./data-store/movie-sql/data:/var/lib/mysql:rw
+      - ./data-store/movie-sql/database/movie_movie.sql:/docker-entrypoint-initdb.d/schema.sql:ro
+    environment:
+      MYSQL_DATABASE: movie #name conflict
+      MYSQL_USER: movie123
+      MYSQL_PASSWORD: roo123
+      MYSQL_ROOT_PASSWORD: root123
+    
+ 
+  mysql-rating:
+    image: mysql
+    container_name: mysql-rating
+    volumes:
+      - ./data-store/rating-sql/data:/var/lib/mysql:rw
+      - ./data-store/rating-sql/database/rating_movie.sql:/docker-entrypoint-initdb.d/schema.sql:ro
+    environment:
+      MYSQL_DATABASE: rating
+      MYSQL_USER: rating123
+      MYSQL_PASSWORD: roo123
+      MYSQL_ROOT_PASSWORD: root123
+    # ports:
+    #   - '3306:3306'
+    # expose:
+    #   - '3306'
+   
+  
+  discovery-service:
+    image: discovery-service
+    container_name: discovery-service
+    ports:
+      - 8761:8761
+
+  auth-server:
+    image: auth-server
+    container_name: auth-server
+    ports:
+      - 9999:9999
+    links:
+      - mysql-auth
+      - discovery-service
+
+    depends_on: 
+      - mysql-auth
+      - discovery-service 
+    #restart: on-failure
+
+  movie-service-api:
+    image: movie-service-api
+    container_name: movie-service-api
+    ports:
+      - 9090:9090
+    links:
+      - mysql-movie
+      - discovery-service
+
+    depends_on: 
+      - mysql-movie
+      - discovery-service 
+    
+    #restart: on-failure
+
+  rating-service-api:
+    image: rating-service-api
+    container_name: rating-service-api
+    ports:
+      - 9091:9091
+    
+    links:
+      - mysql-rating
+      - discovery-service
+
+    depends_on: 
+      - mysql-rating
+      - discovery-service 
+    
+    #restart: on-failure
+  
+  movie-catalog-service:
+    image: movie-catalog-service
+    ports:
+      - 8081:8081
+    links:
+      - discovery-service
+      - movie-service-api
+      - rating-service-api
+    depends_on:
+      - discovery-service
+      - auth-server
+      - movie-service-api
+      - rating-service-api
+
+    #restart: on-failure
+
+  product-service-api:
+    image: product-service-api
+    ports:
+     - 8080:8080
+    links:
+      - discovery-service
+      - movie-catalog-service
+    depends_on:
+      - discovery-service
+      - auth-server
+      - movie-service-api
+      - rating-service-api
+    
+    #restart: on-failure
+
+  zuul-service:
+    image: zuul-service
+    ports:
+      - 8763:8763
+    links:
+      - discovery-service
+      - movie-service-api
+      - rating-service-api
+      - product-service-api
+      - movie-catalog-service
+    
+    depends_on:
+      - discovery-service
+      - movie-service-api
+      - rating-service-api
+      - product-service-api
+      - movie-catalog-service
+    
+    #restart: on-failure
+
+

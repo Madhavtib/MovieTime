@@ -1,0 +1,51 @@
+-- MySQL dump 10.13  Distrib 8.0.17, for Win64 (x86_64)
+--
+-- Host: 127.0.0.1    Database: authdb
+-- ------------------------------------------------------
+-- Server version	8.0.17
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `oauth_refresh_token`
+--
+
+DROP TABLE IF EXISTS `oauth_refresh_token`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `oauth_refresh_token` (
+  `token_id` varchar(256) DEFAULT NULL,
+  `token` mediumblob,
+  `authentication` mediumblob
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `oauth_refresh_token`
+--
+
+LOCK TABLES `oauth_refresh_token` WRITE;
+/*!40000 ALTER TABLE `oauth_refresh_token` DISABLE KEYS */;
+INSERT INTO `oauth_refresh_token` VALUES ('17d9818144f6a65d19495cd8ae3c37dd',_binary '¨\Ì\0sr\0Lorg.springframework.security.oauth2.common.DefaultExpiringOAuth2RefreshToken/\ﬂGcù\–…∑\0L\0\nexpirationt\0Ljava/util/Date;xr\0Dorg.springframework.security.oauth2.common.DefaultOAuth2RefreshTokens\·\ncT\‘^\0L\0valuet\0Ljava/lang/String;xpt\0$ebd6a573-f1e5-44fb-b0ad-0a73ca269aebsr\0java.util.DatehjÅKYt\0\0xpw\0\0t:°ö˘x',_binary '¨\Ì\0sr\0Aorg.springframework.security.oauth2.provider.OAuth2AuthenticationΩ@bR\0L\0\rstoredRequestt\0<Lorg/springframework/security/oauth2/provider/OAuth2Request;L\0userAuthenticationt\02Lorg/springframework/security/core/Authentication;xr\0Gorg.springframework.security.authentication.AbstractAuthenticationToken”™(~nGd\0Z\0\rauthenticatedL\0authoritiest\0Ljava/util/Collection;L\0detailst\0Ljava/lang/Object;xp\0sr\0&java.util.Collections$UnmodifiableList¸%1µ\Ïé\0L\0listt\0Ljava/util/List;xr\0,java.util.Collections$UnmodifiableCollectionB\0Ä\À^˜\0L\0cq\0~\0xpsr\0java.util.ArrayListxÅ\“ô\«aù\0I\0sizexp\0\0\0w\0\0\0sr\0Borg.springframework.security.core.authority.SimpleGrantedAuthority\0\0\0\0\0\0\0L\0rolet\0Ljava/lang/String;xpt\0\nROLE_adminsq\0~\0\rt\0createsq\0~\0\rt\0deletesq\0~\0\rt\0readsq\0~\0\rt\0updatexq\0~\0psr\0:org.springframework.security.oauth2.provider.OAuth2Request\0\0\0\0\0\0\0\0Z\0approvedL\0authoritiesq\0~\0L\0\nextensionst\0Ljava/util/Map;L\0redirectUriq\0~\0L\0refresht\0;Lorg/springframework/security/oauth2/provider/TokenRequest;L\0resourceIdst\0Ljava/util/Set;L\0\rresponseTypesq\0~\0xr\08org.springframework.security.oauth2.provider.BaseRequest6(z>£qiΩ\0L\0clientIdq\0~\0L\0requestParametersq\0~\0\ZL\0scopeq\0~\0xpt\0publicsr\0%java.util.Collections$UnmodifiableMapÒ•®˛tıB\0L\0mq\0~\0\Zxpsr\0java.util.HashMap\⁄¡\√`\—\0F\0\nloadFactorI\0	thresholdxp?@\0\0\0\0\0w\0\0\0\0\0\0t\0\ngrant_typet\0passwordt\0usernamet\0madhavxsr\0%java.util.Collections$UnmodifiableSetÄí—èõÄU\0\0xq\0~\0	sr\0java.util.LinkedHashSet\ÿl\◊Zï\›*\0\0xr\0java.util.HashSet∫DÖïñ∏∑4\0\0xpw\0\0\0?@\0\0\0\0\0t\0READt\0WRITExsq\0~\0+w\0\0\0?@\0\0\0\0\0\0xsq\0~\0\"?@\0\0\0\0\0\0w\0\0\0\0\0\0\0xppsq\0~\0+w\0\0\0?@\0\0\0\0\0t\0paymentt\0	inventoryxsq\0~\0+w\0\0\0?@\0\0\0\0\0\0xsr\0Oorg.springframework.security.authentication.UsernamePasswordAuthenticationToken\0\0\0\0\0\0\0L\0credentialsq\0~\0L\0	principalq\0~\0xq\0~\0sq\0~\0sq\0~\0\0\0\0w\0\0\0q\0~\0q\0~\0q\0~\0q\0~\0q\0~\0xq\0~\08sr\0java.util.LinkedHashMap4¿N\\l¿˚\0Z\0accessOrderxq\0~\0\"?@\0\0\0\0\0w\0\0\0\0\0\0q\0~\0$q\0~\0%q\0~\0&q\0~\0\'x\0psr\0\'com.vproject.movie.model.AuthUserDetail\Ì)åÇﬁπ\∆\0\0xr\0com.vproject.movie.model.User&ò˝§èqh\0	Z\0accountNonExpiredZ\0accountNonLockedZ\0credentialsNonExpiredZ\0enabledL\0emailq\0~\0L\0idt\0Ljava/lang/Integer;L\0passwordq\0~\0L\0rolesq\0~\0L\0usernameq\0~\0xpt\0madhav@gmail.compt\0D{bcrypt}$2a$10$2LqqUfW1DW9YfVsAL24Wc.4/000nySUDXtAB/IPS9QUiBYcD17.zWsr\0/org.hibernate.collection.internal.PersistentBag˛W≈Ø\⁄O¶D\0L\0bagq\0~\0L\0providedCollectionq\0~\0xr\0>org.hibernate.collection.internal.AbstractPersistentCollectionW∑]ä∫sT\0Z\0allowLoadOutsideTransactionI\0\ncachedSizeZ\0dirtyZ\0elementRemovedZ\0initializedZ\0\risTempSessionL\0keyt\0Ljava/io/Serializable;L\0ownerq\0~\0L\0roleq\0~\0L\0sessionFactoryUuidq\0~\0L\0storedSnapshotq\0~\0Cxp\0ˇˇˇˇ\0\0\0sr\0java.lang.Integer‚†§˜Åá8\0I\0valuexr\0java.lang.NumberÜ¨ïî\‡ã\0\0xp\0\0\0sq\0~\0<q\0~\0?q\0~\0Gq\0~\0@q\0~\0Dt\0madhavt\0#com.vproject.movie.model.User.rolespsq\0~\0\0\0\0w\0\0\0sr\0com.vproject.movie.model.Rolet®3ö)mˇ•\0L\0idq\0~\0=L\0nameq\0~\0L\0permissionsq\0~\0xpq\0~\0Gq\0~\0sq\0~\0A\0ˇˇˇˇ\0\0\0q\0~\0Gq\0~\0Mt\0)com.vproject.movie.model.Role.permissionspsq\0~\0\0\0\0w\0\0\0sr\0#com.vproject.movie.model.Permission\∆\÷#\ÿ⁄ø˜Æ\0L\0idq\0~\0=L\0nameq\0~\0xpq\0~\0Gq\0~\0sq\0~\0Qsq\0~\0E\0\0\0q\0~\0sq\0~\0Qsq\0~\0E\0\0\0q\0~\0sq\0~\0Qsq\0~\0E\0\0\0q\0~\0xsq\0~\0\0\0\0w\0\0\0q\0~\0Rq\0~\0Sq\0~\0Uq\0~\0Wxpxsq\0~\0\0\0\0w\0\0\0q\0~\0Mxpq\0~\0I'),('ac81438fd2e6ef4c8372be4615cdd774',_binary '¨\Ì\0sr\0Lorg.springframework.security.oauth2.common.DefaultExpiringOAuth2RefreshToken/\ﬂGcù\–…∑\0L\0\nexpirationt\0Ljava/util/Date;xr\0Dorg.springframework.security.oauth2.common.DefaultOAuth2RefreshTokens\·\ncT\‘^\0L\0valuet\0Ljava/lang/String;xpt\0$29baec23-6ae7-4069-ac7b-054b7e2d4d1esr\0java.util.DatehjÅKYt\0\0xpw\0\0tJc<-x',_binary '¨\Ì\0sr\0Aorg.springframework.security.oauth2.provider.OAuth2AuthenticationΩ@bR\0L\0\rstoredRequestt\0<Lorg/springframework/security/oauth2/provider/OAuth2Request;L\0userAuthenticationt\02Lorg/springframework/security/core/Authentication;xr\0Gorg.springframework.security.authentication.AbstractAuthenticationToken”™(~nGd\0Z\0\rauthenticatedL\0authoritiest\0Ljava/util/Collection;L\0detailst\0Ljava/lang/Object;xp\0sr\0&java.util.Collections$UnmodifiableList¸%1µ\Ïé\0L\0listt\0Ljava/util/List;xr\0,java.util.Collections$UnmodifiableCollectionB\0Ä\À^˜\0L\0cq\0~\0xpsr\0java.util.ArrayListxÅ\“ô\«aù\0I\0sizexp\0\0\0w\0\0\0sr\0Borg.springframework.security.core.authority.SimpleGrantedAuthority\0\0\0\0\0\0\0L\0rolet\0Ljava/lang/String;xpt\0	ROLE_usersq\0~\0\rt\0readsq\0~\0\rt\0updatexq\0~\0psr\0:org.springframework.security.oauth2.provider.OAuth2Request\0\0\0\0\0\0\0\0Z\0approvedL\0authoritiesq\0~\0L\0\nextensionst\0Ljava/util/Map;L\0redirectUriq\0~\0L\0refresht\0;Lorg/springframework/security/oauth2/provider/TokenRequest;L\0resourceIdst\0Ljava/util/Set;L\0\rresponseTypesq\0~\0xr\08org.springframework.security.oauth2.provider.BaseRequest6(z>£qiΩ\0L\0clientIdq\0~\0L\0requestParametersq\0~\0L\0scopeq\0~\0xpt\0\rauthclient123sr\0%java.util.Collections$UnmodifiableMapÒ•®˛tıB\0L\0mq\0~\0xpsr\0java.util.HashMap\⁄¡\√`\—\0F\0\nloadFactorI\0	thresholdxp?@\0\0\0\0\0w\0\0\0\0\0\0t\0\ngrant_typet\0passwordt\0usernamet\0arnobxsr\0%java.util.Collections$UnmodifiableSetÄí—èõÄU\0\0xq\0~\0	sr\0java.util.LinkedHashSet\ÿl\◊Zï\›*\0\0xr\0java.util.HashSet∫DÖïñ∏∑4\0\0xpw\0\0\0?@\0\0\0\0\0t\0READt\0WRITExsq\0~\0\'w\0\0\0?@\0\0\0\0\0\0xsq\0~\0?@\0\0\0\0\0\0w\0\0\0\0\0\0\0xppsq\0~\0\'w\0\0\0?@\0\0\0\0\0t\0paymentt\0	inventoryxsq\0~\0\'w\0\0\0?@\0\0\0\0\0\0xsr\0Oorg.springframework.security.authentication.UsernamePasswordAuthenticationToken\0\0\0\0\0\0\0L\0credentialsq\0~\0L\0	principalq\0~\0xq\0~\0sq\0~\0sq\0~\0\0\0\0w\0\0\0q\0~\0q\0~\0q\0~\0xq\0~\04sr\0java.util.LinkedHashMap4¿N\\l¿˚\0Z\0accessOrderxq\0~\0?@\0\0\0\0\0w\0\0\0\0\0\0q\0~\0 q\0~\0!q\0~\0\"q\0~\0#x\0psr\0.com.authserver.authserver.model.AuthUserDetail\0\0\0\0\0\0\0\0\0xr\0$com.authserver.authserver.model.User\0\0\0\0\0\0\0\0	Z\0accountNonExpiredZ\0accountNonLockedZ\0credentialsNonExpiredZ\0enabledL\0emailq\0~\0L\0idt\0Ljava/lang/Integer;L\0passwordq\0~\0L\0rolesq\0~\0L\0usernameq\0~\0xpt\0raghav@gmail.compt\0D{bcrypt}$2a$10$WBcfkKdTjm4h0IzOBMxNSOHW3EnVjuQM8CuQMoBC789VMhkdcYIZisr\0/org.hibernate.collection.internal.PersistentBag˛W≈Ø\⁄O¶D\0L\0bagq\0~\0L\0providedCollectionq\0~\0xr\0>org.hibernate.collection.internal.AbstractPersistentCollectionW∑]ä∫sT\0Z\0allowLoadOutsideTransactionI\0\ncachedSizeZ\0dirtyZ\0elementRemovedZ\0initializedZ\0\risTempSessionL\0keyt\0Ljava/io/Serializable;L\0ownerq\0~\0L\0roleq\0~\0L\0sessionFactoryUuidq\0~\0L\0storedSnapshotq\0~\0?xp\0ˇˇˇˇ\0\0\0sr\0java.lang.Integer‚†§˜Åá8\0I\0valuexr\0java.lang.NumberÜ¨ïî\‡ã\0\0xp\0\0\0sq\0~\08q\0~\0;q\0~\0Cq\0~\0<q\0~\0@t\0arnobt\0*com.authserver.authserver.model.User.rolespsq\0~\0\0\0\0w\0\0\0sr\0$com.authserver.authserver.model.Role\0\0\0\0\0\0\0\0L\0idq\0~\09L\0nameq\0~\0L\0permissionsq\0~\0xpq\0~\0Cq\0~\0sq\0~\0=\0ˇˇˇˇ\0\0\0q\0~\0Cq\0~\0It\00com.authserver.authserver.model.Role.permissionspsq\0~\0\0\0\0w\0\0\0sr\0*com.authserver.authserver.model.Permission\0\0\0\0\0\0\0\0L\0idq\0~\09L\0nameq\0~\0xpq\0~\0Cq\0~\0sq\0~\0Msq\0~\0A\0\0\0q\0~\0xsq\0~\0\0\0\0w\0\0\0q\0~\0Nq\0~\0Oxpxsq\0~\0\0\0\0w\0\0\0q\0~\0Ixpq\0~\0E');
+/*!40000 ALTER TABLE `oauth_refresh_token` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2020-09-04  9:47:52

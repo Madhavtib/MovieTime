@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-DemoApplication<movie-service-api>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.movieservice.movieserviceapi.DemoApplication",
+            "projectName": "movie-service-api",
+            "args": ""
+        }
+    ]
+}

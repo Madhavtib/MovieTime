@@ -1,0 +1,83 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-DemoApplication<movie-catalog-service>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.moviecatalog.moviecatalogservice.DemoApplication",
+            "projectName": "movie-catalog-service",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-DiscoveryServiceApplication<discovery-service>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.eurekaserver.discoveryservice.DiscoveryServiceApplication",
+            "projectName": "discovery-service",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-DemoApplication<movie-service-api>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.movieservice.movieserviceapi.DemoApplication",
+            "projectName": "movie-service-api",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-DemoApplication<rating-service-api>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.ratingapi.ratingserviceapi.DemoApplication",
+            "projectName": "rating-service-api",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ZuulServiceApplication<zuul-service>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.zullservice.zuulservice.ZuulServiceApplication",
+            "projectName": "zuul-service",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-MavenWrapperDownloader",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "MavenWrapperDownloader",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-AuthServerApplication<auth-server>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.authserver.authserver.AuthServerApplication",
+            "projectName": "auth-server",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ProductServiceApiApplication<product-service-api>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.productserviceapi.productserviceapi.ProductServiceApiApplication",
+            "projectName": "product-service-api",
+            "args": ""
+        }
+    ]
+}

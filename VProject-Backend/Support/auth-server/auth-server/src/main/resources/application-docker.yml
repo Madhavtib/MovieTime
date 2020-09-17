@@ -1,0 +1,31 @@
+server:
+  port: 9999
+spring:
+  application:
+    name: authorization-server-api
+  datasource:
+    url: jdbc:mysql://mysql-auth:3306/authdb #?createDatabaseIfNotExist=true
+    username: auth
+    password: root123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+logging:
+  level:
+    org:
+      hibernate:
+        type: trace
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${discovery-service:http://discovery-service:8761/eureka}
+  instance:
+    preferIpAddress: true
+
+
