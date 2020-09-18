@@ -78,7 +78,7 @@ In docker-compose.yml file:
 
 
 ## CONTRIBUTORS
-@madhavtib, @birajghosh6
+@madhavtib, @arc-arnob
 
 
 
