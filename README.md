@@ -130,6 +130,16 @@ You will build a web application that is Oauth2 enabled.
 * Download and unzip the source repository for this guide, or clone it using Git: git clone https://github.com/arc-arnob/VProject.git
 * cd to /target folders of all the spring boot applications and run: mvnw spring-boot:run
 
+### Resource Server Confuguration
+* File Location: MovieTime/VProject-Backend/api/product-api-service/product-service-api/src/main/resources/application.properties
+    * Configuration:
+    ```
+    security.oauth2.client.client-id = public
+    security.oauth2.client.client-secret = private
+    api.key=<your api key>
+    
+    ```
+
 ### MySql Workbench Configuration
 Make the following configuration changes in the application.properties file to make it run with your local sql server
 * File Location: VProject/Support/auth-server/auth-server/src/main/resources/application.yml	
