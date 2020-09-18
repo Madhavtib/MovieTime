@@ -208,8 +208,8 @@ Make the following configuration changes in the application.properties file to m
 
 ## CONTRIBUTORS
 
-[Madhav](https://github.com/Madhavtib/MovieTime),
-[Biraj](https://github.com),
+[Madhav](https://github.com/Madhavtib),
+[Biraj](https://github.com/birajghosh6),
 [Arnob](https://github.com/arc-arnob)
 
 
