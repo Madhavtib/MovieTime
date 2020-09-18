@@ -14,7 +14,6 @@ The project have been dockerized
 
  Movies-catalog-service microservice has an endpoint with path "/api/catalog/showratedmovies/{urlId}". This endpoint return a list of movies with name description and rating.
 
-
 ## ENDPOINTS
 Service |	EndPoint |	Method |	Description
 ------- | -------  | ------- | -----------
@@ -37,6 +36,7 @@ rating-service-api |	/rating/addrating |	POST | Post a new rating to the databas
 rating-service-api |	/rating/updaterating/{ratingId} |	POST | Update any exisiting Rating information
 rating-service-api |	/rating/deleterating/{ratingId} |	POST | Delete any exisiting Rating information
 
+
 ## GATEWAYS
 Service |	EndPoint
 ------- | ------- 
@@ -56,10 +56,12 @@ product-service-api	| /api/resource-server-api/showmoviesbyid/{movieId}
 * URI for eureka-server : http://localhost:8761
 * URI for zuul-server : http://localhost:8763
 
+
 ## Used Netflix OSS:
 * Netflix Eureka is used for discovery service.
 * Netflix Ribbon is used for client side load-balancing.
 * Netflix Zuul is used for gateway.
+
 
 ## VERSIONS
 
@@ -70,6 +72,7 @@ product-service-api	| /api/resource-server-api/showmoviesbyid/{movieId}
 * MySql 8
 * Spring-Cloud artifacts
 * npm install version 16.13.1
+
 
 ## Build & Run
 * > mvn clean package : to build
@@ -87,9 +90,11 @@ In docker-compose.yml file:
 * product-service-api : 8080 port is mapped to 8080 port of host
 * zuul-server : 8763 port is mapped to 8763 port of host 
 
+
 ## REACTJS INSTALLATION GUIDE
 
 * Base URL: http://localhost:3000
+
 
 ### Functionality specific APIs:
 
@@ -115,10 +120,13 @@ Endpoint |	Function
 
 Now you can successfully isntalled Reactjs.
 
+
 ## Run on your PC without Docker
+
 
 ### What Will You Build
 You will build a web application that is Oauth2 enabled.
+
 
 ### What you will need
 
@@ -126,9 +134,9 @@ You will build a web application that is Oauth2 enabled.
 * JDK 1.8 or later
 * Gradle 4+ or Maven 3.2+
 
-### To clone and the project do the following
+
+### To clone the project do the following
 * Download and unzip the source repository for this guide, or clone it using Git: git clone https://github.com/arc-arnob/VProject.git
-* cd to /target folders of all the spring boot applications and run: mvnw spring-boot:run
 
 ### Resource Server Confuguration
 * File Location: MovieTime/VProject-Backend/api/product-api-service/product-service-api/src/main/resources/application.properties
@@ -142,6 +150,28 @@ You will build a web application that is Oauth2 enabled.
 
 ### MySql Workbench Configuration
 Make the following configuration changes in the application.properties file to make it run with your local sql server
+
+* File Location: MovieTime/VProject-Backend/Support/auth-server/auth-server/src/main/resources/
+    * Change 'data.txt' to 'data.sql' if running for the first time to populate authorization server data in authdb
+    * Default username and password:
+        * Admin access
+            * username: madhav
+            * password: madpass
+        * User access
+            * username: raghav
+            * password: ragpass
+   * To add new users you can run the below steps:
+       ```
+       insert into  user (id, username,password, email, enabled, accountNonExpired, credentialsNonExpired, accountNonLocked) VALUES ('<id>', '<username>', '{bcrypt}                    <bcryptedpassword>','<emailid>', '1', '1', '1', '1');
+       
+       INSERT INTO ROLE_USER (ROLE_ID, USER_ID)
+       VALUES('<1 / 2>','<id>') /* 1 for admin and 2 for user*/; 
+       
+      ```
+      ### NOTE:
+      * Make sure you replace `<bcryptedpassword>` with 10 rounds bcrypted password. [Bcrypt converter](https://www.browserling.com/tools/bcrypt)
+      
+
 * File Location: VProject/Support/auth-server/auth-server/src/main/resources/application.yml	
     * Configuration:
     ```
@@ -150,6 +180,7 @@ Make the following configuration changes in the application.properties file to m
     password: <your sql server password>
     driver-class-name: com.mysql.cj.jdbc.Driver
    ```
+ 
  * File Location: VProject/Core/Movie-service/movie-service-api/src/main/resources/application.properties	
     * Configuration:
     ```
@@ -158,7 +189,8 @@ Make the following configuration changes in the application.properties file to m
     password: <your sql server password>
     driver-class-name: com.mysql.cj.jdbc.Driver
    ```
- * File Location: VProject/Core/Rating-Service/rating-service-api/src/main/resources/application.properties
+
+* File Location: VProject/Core/Rating-Service/rating-service-api/src/main/resources/application.properties
     * Configuration:
     ```
     datasource :url: jdbc:mysql://localhost:3306/rating?createDatabaseIfNotExist=true 
@@ -166,9 +198,10 @@ Make the following configuration changes in the application.properties file to m
     password: <your sql server password>
     driver-class-name: com.mysql.cj.jdbc.Driver
     ```
-  * File Location: MovieTime/VProject-Backend/Support/auth-server/auth-server/src/main/resources/
-      * Change 'data.txt' to 'data.sql' if running for the first time to populate authorization server data in authdb
-
+    
+### RUN Spring boot project:
+* cd to /target folders of all the spring boot applications and run: mvnw spring-boot:run
+  
 ## NOTE
 * For ReactJs Integrated project please follow this link:
 [GitHub](https://github.com/Madhavtib/MovieTime)
