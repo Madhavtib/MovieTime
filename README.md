@@ -118,7 +118,7 @@ Endpoint |	Function
 * Use command "npm start" in the previously used VS Code terminal to start the react app.
 * Let your browser load the page. 
 
-Now you can successfully isntalled Reactjs.
+Now you have successfully installed Reactjs.
 
 
 ## Run on your PC without Docker
@@ -162,7 +162,7 @@ Make the following configuration changes in the application.properties file to m
             * password: ragpass
    * To add new users you can run the below steps:
        ```
-       insert into  user (id, username,password, email, enabled, accountNonExpired, credentialsNonExpired, accountNonLocked) VALUES ('<id>', '<username>', '{bcrypt}                    <bcryptedpassword>','<emailid>', '1', '1', '1', '1');
+       insert into  user (id, username,password, email, enabled, accountNonExpired, credentialsNonExpired, accountNonLocked) VALUES ('<id>', '<username>', '{bcrypt}   <bcryptedpassword>','<emailid>', '1', '1', '1', '1');
        
        INSERT INTO ROLE_USER (ROLE_ID, USER_ID)
        VALUES('<1 / 2>','<id>') /* 1 for admin and 2 for user*/; 
@@ -200,7 +200,7 @@ Make the following configuration changes in the application.properties file to m
     ```
     
 ### RUN Spring boot project:
-* cd to /target folders of all the spring boot applications and run: mvnw spring-boot:run
+* Change directory(using 'cd' command) to: /target folders of all the spring boot applications and run: mvnw spring-boot:run
   
 ## NOTE
 * For ReactJs Integrated project please follow this link:
