@@ -61,6 +61,16 @@ product-service-api	| /api/resource-server-api/showmoviesbyid/{movieId}
 * Netflix Ribbon is used for client side load-balancing.
 * Netflix Zuul is used for gateway.
 
+## VERSIONS
+
+* 1.0.0 SNAPSHOT
+* Spring-Boot 2.3.3.RELEASE
+* Java 11
+* Docker Image updated
+* MySql 8
+* Spring-Cloud artifacts
+* npm install version 16.13.1
+
 ## Build & Run
 * > mvn clean package : to build
 * > docker-compose up --build : build docker images and containers and run containers
@@ -77,14 +87,33 @@ In docker-compose.yml file:
 * product-service-api : 8080 port is mapped to 8080 port of host
 * zuul-server : 8763 port is mapped to 8763 port of host 
 
-## VERSIONS
+## REACTJS INSTALLATION GUIDE
 
-* 1.0.0 SNAPSHOT
-* Spring-Boot 2.3.3.RELEASE
-* Java 11
-* Docker Image updated
-* MySql 8
-* Spring-Cloud artifacts
+* Base URL: http://localhost:3000
+
+### Functionality specific APIs:
+
+Endpoint |	Function
+------- | ------- 
+/home | renders Home component
+/showmovies | renders all the movies available in the database
+/showratedmovies | renders all the movies rated by the currently logged in user
+/addmovie | renders a form to add a movie; only available to admins
+/updatemovie | renders a form to update a movie; only available to admins
+/addrating | renders a form to add a rating
+
+
+### To RUN the React app:
+
+* Download the latest version Node.js and Visual Studio Code from their official websites.
+* Install Node.js and Visual Studio Code if not installed already.
+* Clone the github repository having the react app and open in Visual Studio Code
+* Open terminal in Visual Studio Code and use command "npm install". It will automatically install all the required dependencies.
+* Start the Microservices as mentioned in the microservices documentation.
+* Use command "npm start" in the previously used VS Code terminal to start the react app.
+* Let your browser load the page. 
+
+Now you can successfully isntalled Reactjs.
 
 ## Run on your PC without Docker
 
