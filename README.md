@@ -166,6 +166,8 @@ Make the following configuration changes in the application.properties file to m
     password: <your sql server password>
     driver-class-name: com.mysql.cj.jdbc.Driver
     ```
+  * File Location: MovieTime/VProject-Backend/Support/auth-server/auth-server/src/main/resources/
+      * Change 'data.txt' to 'data.sql' if running for the first time to populate authorization server data in authdb
 
 ## NOTE
 * For ReactJs Integrated project please follow this link:
