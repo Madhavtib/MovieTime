@@ -75,7 +75,8 @@ product-service-api	| /api/resource-server-api/showmoviesbyid/{movieId}
 
 
 ## Build & Run
-* > mvn clean package : to build
+* > mvnw clean package : to build
+* > mvnw install : to build
 * > docker-compose up --build : build docker images and containers and run containers
 * > docker-compose stop : stop the dockerized services
 * Each maven module has a Dockerfile.
