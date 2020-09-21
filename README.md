@@ -77,9 +77,10 @@ product-service-api	| /api/resource-server-api/showmoviesbyid/{movieId}
 ## Build & Run
 * > mvnw clean package : to build
 * > mvnw install : to build
-* > docker-compose up --build : build docker images and containers and run containers
+* > docker-compose up --d : to run containers
 * > docker-compose stop : stop the dockerized services
 * Each maven module has a Dockerfile.
+### NOTE: Create docker images before running docker commands -- ``` > docker build -f Dockerfile -t <image_name> . ```
 
 In docker-compose.yml file:
 
@@ -139,7 +140,7 @@ You will build a web application that is Oauth2 enabled.
 ### To clone the project do the following
 * Download and unzip the source repository for this guide, or clone it using Git: git clone https://github.com/arc-arnob/VProject.git
 
-### Resource Server Confuguration
+### Resource Server Configuration
 * File Location: MovieTime/VProject-Backend/api/product-api-service/product-service-api/src/main/resources/application.properties
     * Configuration:
     ```
@@ -199,13 +200,25 @@ Make the following configuration changes in the application.properties file to m
     password: <your sql server password>
     driver-class-name: com.mysql.cj.jdbc.Driver
     ```
-    
+
+### Oauth2 implementation is JWT enabled:
+
+   * jks file is already created stored in MovieTime/VProject-Backend/Support/auth-server/auth-server/src/main/resources/jwt.jks
+   * You can create your own jks file and replace the already existing jks file by running the following commands:
+        ```
+        > keytool -genkeypair -alias jwt -keyalg RSA -keypass password -keystore jwt.jks -storepass password
+        > keytool -importkeystore -srckeystore jwt.jks -destkeystore jwt.jks -deststoretype pkcs12
+        > keytool-list -rfc --keystore jwt.jks | openssl x509 -inform pem -pubkey
+        
+        ```
+
+
 ### RUN Spring boot project:
 * Change directory(using 'cd' command) to: /target folders of all the spring boot applications and run: mvnw spring-boot:run
   
 ## NOTE
-* For ReactJs Integrated project please follow this link:
-[GitHub](https://github.com/Madhavtib/MovieTime)
+* For just backend(springboot) project please follow this link:
+[GitHub](https://github.com/arc-arnob/Vproject)
 
 ## CONTRIBUTORS
 
